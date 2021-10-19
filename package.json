@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Brigadesh/hackathon-work#readme",
   "dependencies": {
+    "@slack/bolt": "^3.7.0",
     "config": "^3.3.6",
     "express": "^4.17.1",
     "helmet": "^4.6.0",

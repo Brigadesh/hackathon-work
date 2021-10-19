@@ -1,1 +1,6 @@
-{}
+{
+    "slackBotCredentials": {
+        "signSecret": "ROUTER_SLACK_SIGNING_SECRET",
+        "botToken": "ROUTER_SLACK_BOT_TOKEN"
+    }
+}
