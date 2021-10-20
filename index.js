@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const slackRouter = require('./routes/slackRouter');
+const gCalRouter = require('./routes/gCalRouter');
 const appdebug = require('debug')('appdebug');
 const config = require('config');
 const { authenticate } = require('./middleware/authenticator');
@@ -17,7 +17,7 @@ if (app.get('env') === 'development') {
   app.use(morgan('tiny'));
 }
 app.use(authenticate);
-app.use('/api', slackRouter);
+app.use('/api', gCalRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => appdebug(`Listening on port ${port}...`));

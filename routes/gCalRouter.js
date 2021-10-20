@@ -1,6 +1,6 @@
 const express = require('express');
 const config = require('config');
-const slackRouterDebug = require('debug')('slackrouterdebug');
+const gCalRouterDebug = require('debug')('gCalRouterDebug');
 const router = express.Router();
 const { findUserId } = require('./../lib/slackActions');
 const { easyDeskPushUps } = require('./../lib/mockUI/easyDeskPushUps');
@@ -22,15 +22,15 @@ router.get('/', (req, res) => {
 router.post('/gcal/', (req, res) => {
     switch (req.query.page) {
         case config.get('customerMeetingTag'):
-            slackRouterDebug(`Inside isCustomerMeeting Route - ${sampleGCalRequest}`);
+            gCalRouterDebug(`Inside isCustomerMeeting Route - ${sampleGCalRequest}`);
             findUserId(req.body.userEmail, customerMeetingBlock, res);
             break;
         case config.get('takeBreakTag'):
-            slackRouterDebug(`Inside take a break Route - ${sampleGCalRequest}`);
+            gCalRouterDebug(`Inside take a break Route - ${sampleGCalRequest}`);
             findUserId(req.body.userEmail, takeBreakBlock, res);
             break;
         default:
-            slackRouterDebug(`Inside default easyDeskPushup Route - ${sampleGCalRequest}`);
+            gCalRouterDebug(`Inside default easyDeskPushup Route - ${sampleGCalRequest}`);
             findUserId(req.body.userEmail, easyDeskPushUps, res);
     }
 });
