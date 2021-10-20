@@ -20,4 +20,4 @@ app.use(authenticate);
 app.use('/api', slackRouter);
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(port, () => appdebug(`Listening on port ${port}...`));

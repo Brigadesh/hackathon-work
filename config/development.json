@@ -1,5 +1,7 @@
 {
   "name": "brigadesh dev",
   "channelId": "U02JL196PCZ",
-  "customerMeetingTag": "CustomerMeeting"
+  "customerMeetingTag": "customerMeeting",
+  "takeBreakTag": "takeBreak",
+  "summaryOfDayTag": "summaryOfDay"
 }

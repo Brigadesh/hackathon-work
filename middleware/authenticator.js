@@ -1,4 +1,4 @@
 module.exports.authenticate = (req, res, next) => {
-  console.log("Authenticating..");
+  //Do Later
   next();
 };
