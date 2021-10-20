@@ -6,6 +6,7 @@ const { findUserId } = require('./../lib/slackActions');
 const { caseOverLoad } = require('./../lib/mockUI/sfOppty/caseOverLoad');
 const { opptyLost } = require('./../lib/mockUI/sfOppty/opptyLost');
 const { opptyWon } = require('./../lib/mockUI/sfOppty/opptyWon');
+const { easyDeskPushUps } = require('./../lib/mockUI/easyDeskPushUps');
 
 
 const sampleOpptyRequest = {
@@ -37,7 +38,7 @@ router.post('/', (req, res) => {
             break;
         default:
             sfOpptyRouterDebug(`Inside default easyDeskPushup Route - ${sampleOpptyRequest}`);
-            findUserId(req.body.userEmail, caseOverLoad, res);
+            findUserId(req.body.userEmail, easyDeskPushUps, res);
     }
 });
 

@@ -4,8 +4,8 @@ const gCalRouterDebug = require('debug')('gCalRouterDebug');
 const router = express.Router();
 const { findUserId } = require('./../lib/slackActions');
 const { easyDeskPushUps } = require('./../lib/mockUI/easyDeskPushUps');
-const { customerMeetingBlock } = require('./../lib/mockUI/customerMeeting');
-const { takeBreakBlock } = require('./../lib/mockUI/takeBreak');
+const { customerMeetingBlock } = require('./../lib/mockUI/gCal/customerMeeting');
+const { takeBreakBlock } = require('./../lib/mockUI/gCal/takeBreak');
 
 const sampleGCalRequest = {
     numberOfMeeting: 2,
