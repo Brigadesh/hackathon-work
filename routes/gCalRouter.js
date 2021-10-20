@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     res.send(sampledata);
 });
 
-router.post('/gcal/', (req, res) => {
+router.post('/', (req, res) => {
     switch (req.query.page) {
         case config.get('customerMeetingTag'):
             gCalRouterDebug(`Inside isCustomerMeeting Route - ${sampleGCalRequest}`);

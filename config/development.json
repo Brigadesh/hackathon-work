@@ -3,5 +3,8 @@
   "channelId": "U02JL196PCZ",
   "customerMeetingTag": "customerMeeting",
   "takeBreakTag": "takeBreak",
-  "summaryOfDayTag": "summaryOfDay"
+  "summaryOfDayTag": "summaryOfDay",
+  "opptyLostTag": "opptyLost",
+  "opptyWonTag": "opptyWon",
+  "caseOverLoadTag": "caseOverLoad"
 }

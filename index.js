@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const gCalRouter = require('./routes/gCalRouter');
+const salesforceOpptyRouter = require('./routes/salesforceOpptyRouter');
 const appdebug = require('debug')('appdebug');
 const config = require('config');
 const { authenticate } = require('./middleware/authenticator');
@@ -17,7 +18,8 @@ if (app.get('env') === 'development') {
   app.use(morgan('tiny'));
 }
 app.use(authenticate);
-app.use('/api', gCalRouter);
+app.use('/api/gcal', gCalRouter);
+app.use('/api/salesforceOppty', salesforceOpptyRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => appdebug(`Listening on port ${port}...`));
