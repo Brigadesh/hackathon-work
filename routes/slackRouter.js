@@ -1,35 +1,26 @@
 const express = require('express');
 const config = require('config');
+const slackRouterDebug = require('debug')('slackrouterdebug');
 const router = express.Router();
-const { app } = require('./../lib/slackAuth');
+const { findUserId } = require('./../lib/slackActions');
 
-const sampledata = [
-    { id: 1, name: 'Thor' },
-    { id: 2, name: 'Hulk' },
-    { id: 3, name: 'Thanos' }
-];
+const sampleGCalRequest = {
+    numberOfMeeting: 2,
+    backToBack: 3,
+    isCustomerMeeting: true,
+    totalMeetingHours: 8,
+    userEmail: 'bchandrasekar@salesforce.com'
+}
 
 router.get('/', (req, res) => {
     res.send(sampledata);
 });
 
-router.post('/', (req, res) => {
-    console.log(req.body);
-    postMessage(req.body, res);
-    res.send('OK');
+router.post('/gcal/isCustomerMeeting', (req, res) => {
+    if (sampleGCalRequest && sampleGCalRequest.isCustomerMeeting) {
+        slackRouterDebug(`${sampleGCalRequest}`);
+        findUserId(sampleGCalRequest.userEmail, config.get('customerMeetingTag'), res);
+    }
 });
-
-const postMessage = async (messagebody, res) => {
-    try {
-        const result = await app.client.chat.postMessage({
-            token: config.get('slackBotCredentials.botToken'),
-            channel: config.get('channelId'),
-            text: messagebody
-        });
-    }
-    catch (error) {
-        console.error(error);
-    }
-};
 
 module.exports = router;

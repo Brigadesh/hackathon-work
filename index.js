@@ -17,7 +17,7 @@ if (app.get('env') === 'development') {
   app.use(morgan('tiny'));
 }
 app.use(authenticate);
-app.use('/api/routeSlack', slackRouter);
+app.use('/api', slackRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
