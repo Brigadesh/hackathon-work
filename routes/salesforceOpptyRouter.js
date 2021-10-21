@@ -13,8 +13,8 @@ const sampleOpptyRequest = {
     firstName: 2,
     lastName: 3,
     userEmail: 'bchandrasekar@salesforce.com',
-    oppLostMessage: 'Sorry for Losing',
-    oppWonMessage: 'Great for winning',
+    oppLostMessage: 'Losing Oppty',
+    oppWonMessage: 'Winning Oppty',
     caseClosedMessageGRT10: true
 };
 
