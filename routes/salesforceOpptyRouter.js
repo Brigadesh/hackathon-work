@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
             findUserId(req.body.userEmail, opptyWon, res);
             break;
         case config.get('caseOverLoadTag'):
-            sfOpptyRouterDebug(`Inside tcaseOverLoad Route - ${sampleOpptyRequest}`);
+            sfOpptyRouterDebug(`Inside caseOverLoad Route - ${sampleOpptyRequest}`);
             findUserId(req.body.userEmail, caseOverLoad, res);
             break;
         default:
